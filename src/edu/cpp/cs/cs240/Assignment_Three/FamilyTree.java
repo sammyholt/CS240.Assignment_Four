@@ -9,6 +9,17 @@ public class FamilyTree {
 	private ArrayList<Person> familyMembers;
 	
 	/**
+	 * Default constructor.
+	 */
+	public FamilyTree(){
+		this(new ArrayList<Person>());
+	}
+	
+	public FamilyTree(ArrayList<Person> familyMembers){
+		this.familyMembers = familyMembers;
+	}
+	
+	/**
 	 * Adds a person to the family tree.
 	 * 
 	 * @param p - Person to add to the Family Tree.
@@ -35,6 +46,10 @@ public class FamilyTree {
 	 */
 	public void addPartner(Person p, Person partner){
 		p.getPartners().add(partner);
+	}
+	
+	public void display(Person p){
+		
 	}
 
 }
