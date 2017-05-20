@@ -30,6 +30,7 @@ public class Main {
 		tree.addChild(jennifer, jesse);
 		tree.addChild(nicole, nancy);
 		
+		// display john's tree
 		tree.display(john);
 	}
 

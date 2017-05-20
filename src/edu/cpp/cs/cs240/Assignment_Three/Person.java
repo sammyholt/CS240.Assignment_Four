@@ -160,7 +160,7 @@ public class Person {
 	
 	/**
 	 * 
-	 * @return The gender of the Person. True if male, False if female.
+	 * @return The gender of the Person represented as a string.
 	 */
 	public String getGender(){
 		String genderString = "";

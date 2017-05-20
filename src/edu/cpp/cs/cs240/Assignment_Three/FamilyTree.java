@@ -49,7 +49,14 @@ public class FamilyTree {
 		p.getPartners().add(partner);
 	}
 	
-	public void printDashes(int number){
+	/**
+	 * This method will print a specified number of dashes to the console.
+	 * This method is used to visually show the depth of a certain member
+	 * of the Family Tree.
+	 * 
+	 * @param number
+	 */
+	private void printDashes(int number){
 		for(int i = 0; i < number; i++){
 			System.out.print("-");
 		}
@@ -73,7 +80,7 @@ public class FamilyTree {
 	 * @param relation - The relation to the original person
 	 * @param count - Count parameter to determine the depth of the recursive call.
 	 */
-	public void display(Person p, String relation, int count){
+	private void display(Person p, String relation, int count){
 		if(p.getName() == null) return;
 		
 		
