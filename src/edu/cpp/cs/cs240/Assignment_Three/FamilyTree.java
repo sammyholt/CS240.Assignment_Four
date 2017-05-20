@@ -16,6 +16,11 @@ public class FamilyTree {
 		this(new ArrayList<Person>());
 	}
 	
+	/**
+	 * Constructor with an argument for an existing ArrayList of people.
+	 * 
+	 * @param familyMembers
+	 */
 	public FamilyTree(ArrayList<Person> familyMembers){
 		this.familyMembers = familyMembers;
 	}
