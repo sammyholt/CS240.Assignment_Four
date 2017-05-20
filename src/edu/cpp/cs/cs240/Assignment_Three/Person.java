@@ -136,10 +136,34 @@ public class Person {
 	
 	/**
 	 * 
-	 * @return The unique id of the person.
+	 * @return The unique id of the Person.
 	 */
 	public int getId(){
 		return this.id;
+	}
+	
+	/**
+	 * 
+	 * @return The birthdate of the Person.
+	 */
+	public String getBirthdate(){
+		return this.birthDate;
+	}
+	
+	/**
+	 * 
+	 * @return The deathdate of the Person.
+	 */
+	public String getDeathDate(){
+		return this.deathDate;
+	}
+	
+	/**
+	 * 
+	 * @return The gender of the Person. True if male, False if female.
+	 */
+	public boolean getGender(){
+		return this.gender;
 	}
 
 }
