@@ -162,8 +162,14 @@ public class Person {
 	 * 
 	 * @return The gender of the Person. True if male, False if female.
 	 */
-	public boolean getGender(){
-		return this.gender;
+	public String getGender(){
+		String genderString = "";
+		if(this.gender){
+			genderString = "Male";
+		}else{
+			genderString = "Female";
+		}
+		return genderString;
 	}
 
 }
