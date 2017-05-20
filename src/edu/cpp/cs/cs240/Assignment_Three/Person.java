@@ -10,6 +10,17 @@ import java.util.ArrayList;
 public class Person {
 	
 	/**
+	 * Incremented each time a new Person object is instantiated.  
+	 * Also used to assign a unique id to each person.
+	 */
+	public static int totalPeople;
+	
+	/**
+	 * The unique id of the person.  Allows for easy tracking of people.
+	 */
+	private int id;
+	
+	/**
 	 * Represents the person's name.
 	 */
 	private String name;
@@ -18,11 +29,6 @@ public class Person {
 	 * Represents the person's date of birth.
 	 */
 	private String birthDate;
-	
-	/**
-	 * True if the person is alive, false if the person is dead.
-	 */
-	private boolean alive;
 	
 	/**
 	 * Represents the person's date of death.
@@ -49,7 +55,7 @@ public class Person {
 	 */
 	public Person(){
 		
-		this("John Doe", "1/1/1900", false, "1/1/2000", true);
+		this("John Doe", "1/1/1900", "1/1/2000", true);
 		
 	}
 	
@@ -62,8 +68,8 @@ public class Person {
 	 * @param deathDate
 	 * @param gender
 	 */
-	public Person(String name, String birthDate, boolean alive, String deathDate, boolean gender){
-		this(name, birthDate, alive, deathDate, gender, new ArrayList<Person>(), new ArrayList<Person>());
+	public Person(String name, String birthDate, String deathDate, boolean gender){
+		this(name, birthDate, deathDate, gender, new ArrayList<Person>(), new ArrayList<Person>());
 	}
 	
 	/**
@@ -76,23 +82,14 @@ public class Person {
 	 * @param partners
 	 * @param children
 	 */
-	public Person(String name, String birthDate, boolean alive, String deathDate, boolean gender, ArrayList<Person> partners, ArrayList<Person> children){
+	public Person(String name, String birthDate, String deathDate, boolean gender, ArrayList<Person> partners, ArrayList<Person> children){
 		this.name = name;
 		this.birthDate = birthDate;
-		this.alive = alive;
 		this.deathDate = deathDate;
 		this.gender = gender;
 		this.partners = partners;
 		this.children = children;
-	}
-	
-	/**
-	 * This method determines if the Person is alive or not.
-	 * 
-	 * @return True if the Person is alive, False if they are not.
-	 */
-	public boolean isAlive(){
-		return this.alive;
+		this.id = ++totalPeople;
 	}
 	
 	/**
@@ -113,11 +110,36 @@ public class Person {
 	}
 	
 	/**
+	 * This method determines if the Person has partners or not.
+	 * 
+	 * @return True if the Person has partners, False if they do not.
+	 */
+	public boolean hasPartners(){
+		return (!this.partners.isEmpty());
+	}
+	
+	/**
 	 * 
 	 * @return The partners ArrayList of this person.
 	 */
 	public ArrayList<Person> getPartners(){
 		return this.partners;
+	}
+	
+	/**
+	 * 
+	 * @return The name of the Person.
+	 */
+	public String getName(){
+		return this.name;
+	}
+	
+	/**
+	 * 
+	 * @return The unique id of the person.
+	 */
+	public int getId(){
+		return this.id;
 	}
 
 }

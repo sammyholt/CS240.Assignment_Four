@@ -6,12 +6,12 @@ public class Main {
 		
 		FamilyTree tree = new FamilyTree();
 		Person test = new Person();
-		Person me = new Person("Sammy Holt", "6/19/1995", true, "", true);
+		Person me = new Person("Sammy Holt", "6/19/1995", "", true);
 		tree.add(me);
 		tree.add(test);
 		tree.addChild(test, me);
 		
-		tree.display(test);
+		//tree.display(test);
 	}
 
 }
